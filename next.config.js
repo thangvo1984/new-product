@@ -1,6 +1,19 @@
-/** @type {import('next').NextConfig} */
 const nextConfig = {
-  reactStrictMode: true,
-}
+  images: {
+    formats: ["image/webp"],
+  },
+  webpack: (config, options) => {
+    config.module.rules.push({
+      test: /\.(png|jpg|gif)$/i,
+      use: [
+        {
+          loader: "url-loader",
+        },
+      ],
+    });
 
-module.exports = nextConfig
+    return config;
+  },
+};
+
+module.exports = nextConfig;
