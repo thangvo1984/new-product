@@ -9,7 +9,7 @@ export default function Home() {
   return (
     <>
       <div>Hello main page</div>
-      <img src={car.src} />
+      <img src={car} />
     </>
   )
 }

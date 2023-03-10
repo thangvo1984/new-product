@@ -1,19 +1,3 @@
-const nextConfig = {
-  images: {
-    formats: ["image/webp"],
-  },
-  webpack: (config, options) => {
-    config.module.rules.push({
-      test: /\.(png|jpg|gif)$/i,
-      use: [
-        {
-          loader: "url-loader",
-        },
-      ],
-    });
+const withImages = require("next-images");
 
-    return config;
-  },
-};
-
-module.exports = nextConfig;
+module.exports = withImages();
